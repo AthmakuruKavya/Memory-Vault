@@ -1,0 +1,3 @@
+Akinnera@8oa
+
+mongodb+srv://athmakurukavya8_db_user:Akinnera@8oa@vault-database.rdo8ry0.mongodb.net/
