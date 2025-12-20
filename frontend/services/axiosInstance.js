@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://memory-vault-backend-c2bi.onrender.com',
+  baseURL: 'https://memory-vault-backend-c2bi.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
