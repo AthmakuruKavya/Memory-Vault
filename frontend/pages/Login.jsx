@@ -36,19 +36,6 @@ const Login = () => {
     }
   };
 
-  // const handleForgotPassword = async () => {
-  //   if (!email) {
-  //     toast("Please enter your email first", { icon: "ℹ️" });
-  //     return;
-  //   }
-  //   try {
-  //     await forgotPasswordService(email);
-  //     toast.success("Password reset email sent!");
-  //   } catch (e) {
-  //     toast.error("Failed to send reset email");
-  //   }
-  // };
-
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-brand-50 px-4">
       {/* Horizontal container: image (left) + login card (right). Keep no wrapping and stretch so heights match */}
@@ -112,18 +99,6 @@ const Login = () => {
                   className="mb-2"
                 />
               </div>
-
-              {/* <div className="flex items-center justify-between">
-                <div className="text-sm">
-                  <button
-                    type="button"
-                    onClick={handleForgotPassword}
-                    className="font-medium text-brand-600 hover:text-brand-500"
-                  >
-                    Forgot your password?
-                  </button>
-                </div>
-              </div> */}
 
               <button
                 type="submit"

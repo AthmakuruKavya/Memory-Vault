@@ -57,9 +57,6 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             {user ? (
               <>
-                {/* <Link to="/create" className="text-gray-600 hover:text-brand-600 transition-colors p-2" title="Add Memory">
-                  <i className="fas fa-plus-circle text-2xl"></i>
-                </Link> */}
 
                 <div className="relative">
                     <button 
@@ -118,12 +115,7 @@ const Navbar = () => {
                 </div>
               </>
             ) : 
-            // (
-            //   <div className="space-x-4">
-            //     <Link to="/login" className="text-gray-700 hover:text-brand-600 font-medium">Login</Link>
-            //     <Link to="/signup" className="px-4 py-2 bg-brand-600 text-white rounded-md hover:bg-brand-700 transition shadow-sm">Sign Up</Link>
-            //   </div>
-            // )
+          
             null}
           </div>
         </div>
