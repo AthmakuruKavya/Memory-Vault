@@ -18,6 +18,30 @@ exports.getFavoriteStories = async (req, res) => {
     }
 };
 
+exports.getOnThisDayStories = async (req, res) => {
+    try {
+        const today = new Date();
+        const month = today.getMonth() + 1; // MongoDB months are 1-12
+        const day = today.getDate();
+        const year = today.getFullYear();
+
+        const stories = await Story.find({
+            userId: req.user,
+            $expr: {
+                $and: [
+                    { $eq: [{ $dayOfMonth: '$date' }, day] },
+                    { $eq: [{ $month: '$date' }, month] },
+                    { $lt: [{ $year: '$date' }, year] } // Only past years
+                ]
+            }
+        });
+        
+        res.json(stories);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
 exports.getStoryById = async (req, res) => {
     try {
         const story = await Story.findOne({ _id: req.params.id, userId: req.user });

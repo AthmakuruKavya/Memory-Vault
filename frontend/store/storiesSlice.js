@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
+  onThisDayItems: [],
   loading: false,
   error: null,
   searchTerm: '',
@@ -22,6 +23,9 @@ const storiesSlice = createSlice({
     fetchStoriesFailure: (state, action) => {
       state.loading = false;
       state.error = action.payload;
+    },
+    setOnThisDayStories: (state, action) => {
+        state.onThisDayItems = action.payload;
     },
     addStory: (state, action) => {
       state.items.unshift(action.payload); // Add new story to top
@@ -50,7 +54,8 @@ const storiesSlice = createSlice({
 export const { 
     fetchStoriesStart, 
     fetchStoriesSuccess, 
-    fetchStoriesFailure, 
+    fetchStoriesFailure,
+    setOnThisDayStories, 
     addStory, 
     updateStory, 
     deleteStory,

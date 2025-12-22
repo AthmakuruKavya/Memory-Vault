@@ -9,6 +9,9 @@ router.get('/', auth, storyController.getAllStories);
 // Get favorite stories
 router.get('/favorites', auth, storyController.getFavoriteStories);
 
+// Get "On This Day" stories (Must be before /:id)
+router.get('/on-this-day', auth, storyController.getOnThisDayStories);
+
 // Get single story
 router.get('/:id', auth, storyController.getStoryById);
 

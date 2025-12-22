@@ -10,6 +10,11 @@ export const getFavoriteStoriesService = async () => {
   return data;
 };
 
+export const getOnThisDayStoriesService = async () => {
+  const { data } = await axiosInstance.get('/stories/on-this-day');
+  return data;
+};
+
 export const getStoryByIdService = async (id) => {
   const { data } = await axiosInstance.get(`/stories/${id}`);
   return data;
