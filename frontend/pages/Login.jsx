@@ -43,7 +43,7 @@ const Login = () => {
         {/* Image (left) */}
         <div className="w-80 flex-shrink-0 rounded-l-xl shadow-sm border border-gray-100 border-r-0 overflow-hidden relative z-0 min-h-0 hidden md:block">
           <img
-            src="https://advancedcare.health/wp-content/uploads/2025/07/Advance.jpg"
+            src="/auth/login.jpg"
             alt="Emotional storytelling"
             className="object-cover w-full h-full"
           />

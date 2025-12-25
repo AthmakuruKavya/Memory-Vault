@@ -49,7 +49,7 @@ const Signup = () => {
         {/* Image (left) */}
         <div className="w-80 flex-shrink-0 rounded-l-xl shadow-sm border border-gray-100 border-r-0 overflow-hidden relative z-0 min-h-0 hidden md:block">
           <img
-            src="https://karaellarayner.wordpress.com/wp-content/uploads/2014/12/img_4007.jpg"
+            src="/auth/signup.jpg"
             alt="Photo frames"
             className="object-cover w-full h-full"
           />
