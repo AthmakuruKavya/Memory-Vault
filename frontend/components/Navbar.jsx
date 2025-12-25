@@ -25,7 +25,7 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  const showSearch = location.pathname === '/';
+  const showSearch = location.pathname === '/vault';
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-40">
@@ -34,7 +34,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center group">
+            <Link to={user ? "/vault" : "/"} className="flex items-center group">
               <i className="fas fa-book-open text-brand-600 text-2xl mr-2 group-hover:text-brand-700 transition-colors"></i>
               <span className="font-bold text-xl tracking-tight text-gray-900 group-hover:text-gray-700 transition-colors">Memory Vault</span>
             </Link>
@@ -101,6 +101,7 @@ const Navbar = () => {
                                         <div className="w-8 text-center"><i className="fas fa-heart text-gray-400"></i></div>
                                         <span className="font-medium">My Favorites</span>
                                     </Link>
+                                    
                                 </div>
 
                                 <div className="border-t border-gray-100 mt-1 pt-1">
@@ -114,9 +115,8 @@ const Navbar = () => {
                     )}
                 </div>
               </>
-            ) : 
-          
-            null}
+            ) : null
+            }
           </div>
         </div>
       </div>

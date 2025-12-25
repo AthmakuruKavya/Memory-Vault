@@ -64,7 +64,7 @@ const ProfileForm = ({ user, onSave, onCancel, isLoading }) => {
       />
       
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-500 mb-1">Email</label>
+        <label className="block text-sm font-medium text-gray-500 mb-1">Email (Read Only)</label>
         <input 
           type="email" 
           value={user.email} 
@@ -81,16 +81,18 @@ const ProfileForm = ({ user, onSave, onCancel, isLoading }) => {
         textarea
       />
       <Input 
-        label="Hobbies"
+        label="Hobbies (One per line)"
         name="hobbies"
         value={formData.hobbies}
         onChange={handleChange}
+        textarea
       />
       <Input 
-        label="Favorite things to do"
+        label="Favorite things to do (One per line)"
         name="favoriteThings"
         value={formData.favoriteThings}
         onChange={handleChange}
+        textarea
       />
 
       <div className="flex justify-end space-x-3 pt-4 border-t border-gray-100">

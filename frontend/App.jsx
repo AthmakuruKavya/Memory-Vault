@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import Home from './pages/Home.jsx';
+import Landing from './pages/Landing.jsx';
 import Profile from './pages/Profile.jsx';
 import Favorites from './pages/Favorites.jsx';
 import StoryDetail from './pages/StoryDetail.jsx';
@@ -18,12 +19,14 @@ function App() {
         <div className="min-h-screen bg-brand-50">
           <Navbar />
           <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
             {/* Protected Routes */}
             <Route element={<ProtectedRoute />}>
-              <Route path="/" element={<Home />} />
+              <Route path="/vault" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/create" element={<StoryDetail />} />

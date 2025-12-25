@@ -37,10 +37,6 @@ const StoryCard = ({ story, onToggleFavorite }) => {
                 </span>
              )}
           </div>
-
-          <p className="text-gray-600 text-sm line-clamp-3 mb-4 flex-1">
-            {story.description}
-          </p>
           
           <div className="mt-auto pt-3 border-t border-gray-100 text-brand-600 text-sm font-medium group-hover:text-brand-800 flex items-center">
             Read Memory <i className="fas fa-arrow-right ml-2 text-xs"></i>

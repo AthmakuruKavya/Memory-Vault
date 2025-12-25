@@ -25,7 +25,7 @@ const Login = () => {
       const data = await loginService(email, password);
       dispatch(loginSuccess(data));
       toast.success("Login successful");
-      navigate("/");
+      navigate("/vault");
     } catch (err) {
       const errorMsg =
         err.response?.data?.message || err.message || "Login failed";
@@ -41,7 +41,7 @@ const Login = () => {
       {/* Horizontal container: image (left) + login card (right). Keep no wrapping and stretch so heights match */}
       <div className="flex items-stretch flex-nowrap">
         {/* Image (left) */}
-        <div className="w-80 flex-shrink-0 rounded-l-xl shadow-sm border border-gray-100 border-r-0 overflow-hidden relative z-0 min-h-0">
+        <div className="w-80 flex-shrink-0 rounded-l-xl shadow-sm border border-gray-100 border-r-0 overflow-hidden relative z-0 min-h-0 hidden md:block">
           <img
             src="https://advancedcare.health/wp-content/uploads/2025/07/Advance.jpg"
             alt="Emotional storytelling"
@@ -68,8 +68,8 @@ const Login = () => {
         </div>
 
         {/* Login card (right) - overlaps the image slightly from right using negative margin and higher z-index */}
-        <div className="md:-ml-6 -ml-4 z-20 flex-shrink-0">
-          <div className="w-full md:w-[420px] max-w-[calc(100vw-2rem)] space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100 border-l-0">
+        <div className="md:-ml-6 z-20 flex-shrink-0 w-full md:w-auto">
+          <div className="w-full md:w-[420px] max-w-[calc(100vw-2rem)] space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100 md:border-l-0 h-full flex flex-col justify-center">
             <div className="text-center">
               <i className="fas fa-book-open text-brand-600 text-4xl mb-4"></i>
               <h2 className="text-3xl font-extrabold text-gray-900">

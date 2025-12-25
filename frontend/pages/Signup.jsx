@@ -33,7 +33,7 @@ const Signup = () => {
       const data = await signupService(formData.username, formData.email, formData.password);
       dispatch(loginSuccess(data));
       toast.success('Account created successfully!');
-      navigate('/');
+      navigate('/vault');
     } catch (err) {
       const errorMsg = err.response?.data?.message || err.message || 'Signup failed';
       toast.error(errorMsg);
@@ -47,7 +47,7 @@ const Signup = () => {
       {/* Horizontal container: image (left) + signup card (right). Keep no wrapping and stretch so heights match */}
       <div className="flex items-stretch flex-nowrap">
         {/* Image (left) */}
-        <div className="w-80 flex-shrink-0 rounded-l-xl shadow-sm border border-gray-100 border-r-0 overflow-hidden relative z-0 min-h-0">
+        <div className="w-80 flex-shrink-0 rounded-l-xl shadow-sm border border-gray-100 border-r-0 overflow-hidden relative z-0 min-h-0 hidden md:block">
           <img
             src="https://karaellarayner.wordpress.com/wp-content/uploads/2014/12/img_4007.jpg"
             alt="Photo frames"
@@ -66,8 +66,8 @@ const Signup = () => {
         </div>
 
         {/* Signup card (right) - overlaps the image slightly from right using negative margin and higher z-index */}
-        <div className="md:-ml-6 -ml-4 z-20 flex-shrink-0">
-          <div className="w-full md:w-[420px] max-w-[calc(100vw-2rem)] space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100 border-l-0">
+        <div className="md:-ml-6 z-20 flex-shrink-0 w-full md:w-auto">
+          <div className="w-full md:w-[420px] max-w-[calc(100vw-2rem)] space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100 md:border-l-0 h-full flex flex-col justify-center">
             <div className="text-center">
                 <h2 className="text-3xl font-extrabold text-gray-900">Create Account</h2>
                 <p className="mt-2 text-sm text-gray-600">Start storing your memories today</p>
@@ -114,7 +114,11 @@ const Signup = () => {
                 disabled={isLoading}
                 className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 disabled:opacity-50 transition-colors"
               >
-                {isLoading ? 'Creating Account...' : 'Sign Up'}
+                {isLoading ? (
+                  <><i className="fas fa-circle-notch fa-spin mr-2"></i>Creating Account...</>
+                ) : (
+                  'Sign Up'
+                )}
               </button>
             </form>
             

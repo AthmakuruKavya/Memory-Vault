@@ -29,11 +29,11 @@ const ProfileHeader = ({ user, onEdit }) => {
         <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Hobbies</h4>
-            <p className="text-gray-800">{user.hobbies || '-'}</p>
+            <p className="text-gray-800 whitespace-pre-line">{user.hobbies || '-'}</p>
           </div>
           <div>
             <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Favorites</h4>
-            <p className="text-gray-800">{user.favoriteThings || '-'}</p>
+            <p className="text-gray-800 whitespace-pre-line">{user.favoriteThings || '-'}</p>
           </div>
         </div>
       </div>

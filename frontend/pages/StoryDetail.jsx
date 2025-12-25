@@ -35,11 +35,11 @@ const StoryDetail = () => {
                 setStory(fetchedStory);
             } else {
                 toast.error('Story not found');
-                navigate('/');
+                navigate('/vault');
             }
         }).catch(() => {
             toast.error('Error loading story');
-            navigate('/');
+            navigate('/vault');
         }).finally(() => setLoading(false));
     }
   }, [id, isCreating, navigate]);
@@ -51,7 +51,7 @@ const StoryDetail = () => {
               const newStory = await createStoryService(formData);
               dispatch(addStory(newStory));
               toast.success('Memory created!');
-              navigate('/');
+              navigate('/vault');
           } else if (id) {
               const updated = await updateStoryService(id, formData);
               dispatch(updateStory(updated));
@@ -73,7 +73,7 @@ const StoryDetail = () => {
           await deleteStoryService(id);
           dispatch(deleteStory(id));
           toast.success('Memory deleted');
-          navigate('/');
+          navigate('/vault');
       } catch (err) {
           toast.error('Failed to delete');
       }
