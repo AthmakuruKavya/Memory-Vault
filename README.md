@@ -4,6 +4,9 @@
 
 Users can log in, create memory stories with images, descriptions, dates, and locations, mark their favorite memories, and manage their personal profile — all in one place.
 
+## 🔗 Live Demo
+👉 **Live Link:** https://memory-vault-frontend-site.onrender.com/
+
 ---
 
 ## 🌟 Project Overview
@@ -17,9 +20,6 @@ Each memory becomes a **story card** that can be:
 - Deleted
 - Searched
 - Marked as a favorite ❤️
-
-## 🔗 Live Demo
-👉 **Live Link:** https://memory-vault-frontend-site.onrender.com
 
 ---
 
