@@ -81,14 +81,14 @@ const ProfileForm = ({ user, onSave, onCancel, isLoading }) => {
         textarea
       />
       <Input 
-        label="Hobbies (One per line)"
+        label="Hobbies"
         name="hobbies"
         value={formData.hobbies}
         onChange={handleChange}
         textarea
       />
       <Input 
-        label="Favorite things to do (One per line)"
+        label="Favorite things to do"
         name="favoriteThings"
         value={formData.favoriteThings}
         onChange={handleChange}
