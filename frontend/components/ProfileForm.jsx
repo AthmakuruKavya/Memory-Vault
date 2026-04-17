@@ -64,7 +64,7 @@ const ProfileForm = ({ user, onSave, onCancel, isLoading }) => {
       />
       
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-500 mb-1">Email (Read Only)</label>
+        <label className="block text-sm font-medium text-gray-500 mb-1">Email</label>
         <input 
           type="email" 
           value={user.email} 
